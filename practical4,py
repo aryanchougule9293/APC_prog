@@ -1,0 +1,261 @@
+```python
+# 1. Create a list of five fruits and display the list.
+fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"]
+print("Fruits:", fruits)
+
+# 2. Create a list of five integers. Display first, last and third element.
+numbers = [10, 20, 30, 40, 50]
+print("First:", numbers[0])
+print("Last:", numbers[-1])
+print("Third:", numbers[2])
+
+# 3. Replace the third color with another color.
+colors = ["Red", "Blue", "Green", "Yellow", "Black"]
+colors[2] = "Purple"
+print("Updated Colors:", colors)
+
+# 4. Add elements at end, beginning and specified position.
+numbers = [10, 20, 30, 40]
+numbers.append(50)
+numbers.insert(0, 5)
+numbers.insert(3, 25)
+print("Updated List:", numbers)
+
+# 5. Remove first, last and specific student.
+students = ["Amit", "Rahul", "Priya", "Sneha", "Kiran"]
+students.pop(0)
+students.pop()
+students.remove("Priya")
+print("Remaining Students:", students)
+
+# 6. Largest and smallest without max() and min().
+numbers = [12, 45, 7, 89, 23]
+largest = smallest = numbers[0]
+for i in numbers:
+    if i > largest:
+        largest = i
+    if i < smallest:
+        smallest = i
+print("Largest:", largest)
+print("Smallest:", smallest)
+
+# 7. Accept 10 numbers. Find sum and average.
+numbers = []
+for i in range(10):
+    numbers.append(int(input("Enter number: ")))
+total = sum(numbers)
+average = total / 10
+print("Sum:", total)
+print("Average:", average)
+
+# 8. Count even and odd numbers.
+numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+even = odd = 0
+for i in numbers:
+    if i % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+print("Even:", even)
+print("Odd:", odd)
+
+# 9. Search city in list.
+cities = ["Pune","Mumbai","Kolhapur","Nagpur","Nashik"]
+city = input("Enter city: ")
+if city in cities:
+    print("City found")
+else:
+    print("City not found")
+
+# 10. Reverse list without reverse().
+numbers = [10,20,30,40,50]
+rev = []
+for i in range(len(numbers)-1,-1,-1):
+    rev.append(numbers[i])
+print(rev)
+
+# 11. List slicing.
+numbers = [1,2,3,4,5,6,7,8,9,10]
+print("First 5:", numbers[:5])
+print("Last 5:", numbers[-5:])
+print("Middle 4:", numbers[3:7])
+print("Alternate:", numbers[::2])
+print("Reverse:", numbers[::-1])
+
+# 12. Display elements at even index.
+numbers = [10,20,30,40,50,60]
+print(numbers[::2])
+
+# 13. Sort ascending and descending.
+numbers = []
+for i in range(10):
+    numbers.append(int(input("Enter number: ")))
+print("Ascending:", sorted(numbers))
+print("Descending:", sorted(numbers, reverse=True))
+
+# 14. Display unique elements.
+numbers = [1,2,2,3,4,4,5,6,6]
+unique = []
+for i in numbers:
+    if i not in unique:
+        unique.append(i)
+print(unique)
+
+# 15. Find second largest element.
+numbers = [10,50,30,70,90,80]
+largest = second = -999999
+for i in numbers:
+    if i > largest:
+        second = largest
+        largest = i
+    elif i > second and i != largest:
+        second = i
+print("Second Largest:", second)
+
+# 16. Nested list of students.
+students = [
+    ["Amit",101,85],
+    ["Rahul",102,78],
+    ["Priya",103,90]
+]
+for s in students:
+    print("Name:", s[0], "Roll:", s[1], "Marks:", s[2])
+
+# 17. Matrix addition.
+A = [[1,2,3],[4,5,6],[7,8,9]]
+B = [[9,8,7],[6,5,4],[3,2,1]]
+C = []
+for i in range(3):
+    row = []
+    for j in range(3):
+        row.append(A[i][j]+B[i][j])
+    C.append(row)
+print(C)
+
+# 18. Shopping cart.
+cart = ["Rice","Sugar","Oil"]
+cart.append("Milk")
+cart.remove("Sugar")
+item = input("Search item: ")
+if item in cart:
+    print("Found")
+else:
+    print("Not Found")
+print(cart)
+print("Total Items:", len(cart))
+
+# 19. Student attendance.
+students = ["Amit","Rahul","Sneha"]
+print("Total:", len(students))
+name = input("Search student: ")
+print(name in students)
+students.append("Priya")
+students.remove("Rahul")
+print(students)
+
+# 20. Book list.
+books = ["Python","Java","C","C++"]
+books.append("HTML")
+book = input("Search book: ")
+print(book in books)
+books.remove("Java")
+print(books)
+print("Total Books:", len(books))
+
+# 21. Merge two lists.
+list1 = [1,2,3]
+list2 = [4,5,6]
+merged = list1 + list2
+print(merged)
+
+# 22. Common elements.
+list1 = [1,2,3,4,5]
+list2 = [3,4,5,6,7]
+common = []
+for i in list1:
+    if i in list2:
+        common.append(i)
+print(common)
+
+# 23. Frequency of each element.
+numbers = [1,2,2,3,3,3,4]
+for i in set(numbers):
+    print(i, ":", numbers.count(i))
+
+# 24. Rotate list.
+numbers = [1,2,3,4,5]
+left = numbers[1:] + numbers[:1]
+right = numbers[-1:] + numbers[:-1]
+print("Left:", left)
+print("Right:", right)
+
+# 25. Remove duplicates preserving order.
+numbers = [1,2,2,3,4,4,5]
+result = []
+for i in numbers:
+    if i not in result:
+        result.append(i)
+print(result)
+
+# 26. Student marks analysis.
+marks = [55,67,89,90,45,78,80,60,72,50,49,85,91,64,77,58,69,88,95,40]
+highest = max(marks)
+lowest = min(marks)
+avg = sum(marks)/len(marks)
+above = below = 0
+for m in marks:
+    if m > avg:
+        above += 1
+    elif m < avg:
+        below += 1
+print(highest, lowest, avg, above, below)
+
+# 27. Employee salary analysis.
+salary = [25000,35000,60000,70000,45000,55000]
+print("Highest:", max(salary))
+print("Lowest:", min(salary))
+print("Average:", sum(salary)/len(salary))
+print("Above 50000:", [i for i in salary if i>50000])
+print("Below 30000:", [i for i in salary if i<30000])
+
+# 28. Batsman scores.
+scores = [45,67,120,89,100,35,55,150,20,78]
+print("Highest:", max(scores))
+print("Lowest:", min(scores))
+print("Total:", sum(scores))
+print("Average:", sum(scores)/len(scores))
+century = half = 0
+for s in scores:
+    if s >= 100:
+        century += 1
+    elif s >= 50:
+        half += 1
+print("Centuries:", century)
+print("Half Centuries:", half)
+
+# 29. Temperature analysis.
+temp = [30,31,29,35,36,33,32,31,30,34,35,36,37,33,32,31,29,30,28,27,34,35,36,37,38,33,32,31,30,29]
+avg = sum(temp)/len(temp)
+print("Hottest:", max(temp))
+print("Coldest:", min(temp))
+print("Average:", avg)
+print("Above Average:", [i for i in temp if i>avg])
+print("Below Average:", [i for i in temp if i<avg])
+
+# 30. Patient records.
+patients = ["Amit","Rahul","Sneha"]
+ages = [25,40,35]
+patients.append("Priya")
+ages.append(30)
+index = patients.index("Rahul")
+patients.pop(index)
+ages.pop(index)
+search = input("Enter patient name: ")
+if search in patients:
+    print("Patient Found")
+else:
+    print("Patient Not Found")
+for i in range(len(patients)):
+    print(patients[i], "-", ages[i])
+print("Total Patients:", len(patients))
+```
